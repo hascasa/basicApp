@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Insurance Data Overview</title>
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f8f9fa;
+        color: #333;
+
+        text-align: center;
+      }
+
+      h1,
+      p,
+      h2 {
+        color: #007bff;
+      }
+
+      ul {
+        margin: 10;
+        padding: 10;
+
+        display: inline-block;
+        background-color: #333;
+      }
+
+      li {
+        float: left;
+      }
+
+      li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+
+      li a:hover {
+        background-color: #777;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Endpoints</h2>
+    <ul>
+      <li><a href="/admin/">Admin Panel</a></li>
+      <li><a href="/api/insurance/">/api/insurance/</a></li>
+      <li><a href="/add/">Add Insurance</a></li>
+      <li><a href="/list/">Update or Remove from table</a></li>
+      <li><a href="/filter-list/">Filter Insurance from table</a></li>
+    </ul>
+    <h1>Insurance Data Application</h1>
+    <p>Python Version: {{ python_version }}</p>
+    <p>Django Version: {{ django_version }}</p>
+    <p>Packages: {{ packages }}</p>
+    <p>Admin User: {{ admin_user }}</p>
+    <p>Admin Password: {{ admin_password }}</p>
+  </body>
+</html>

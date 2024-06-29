@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insurance Entries</title>
+</head>
+<body>
+    <h1>Insurance Entries</h1>
+    <table border="1">
+        <tr>
+            <th>Age</th>
+            <th>Sex</th>
+            <th>BMI</th>
+            <th>Children</th>
+            <th>Smoker</th>
+            <th>Region</th>
+            <th>Charges</th>
+            <th>Actions</th>
+        </tr>
+        {% for entry in entries %}
+        <tr>
+            <td>{{ entry.age }}</td>
+            <td>{{ entry.sex }}</td>
+            <td>{{ entry.bmi }}</td>
+            <td>{{ entry.children }}</td>
+            <td>{{ entry.smoker }}</td>
+            <td>{{ entry.region }}</td>
+            <td>{{ entry.charges }}</td>
+            <td>
+                <a href="{% url 'update_insurance' pk=entry.id %}">Update</a>
+                <form action="{% url 'delete_insurance' pk=entry.id %}" method="post" style="display:inline;">
+                    {% csrf_token %}
+                    <input type="submit" value="Delete" onclick="return confirm('Are you sure?');">
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

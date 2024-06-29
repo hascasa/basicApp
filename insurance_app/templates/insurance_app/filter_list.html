@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Insurance Records</title>
+</head>
+<body>
+    <h1>Filter Insurance Records</h1>
+    <label for="sex">Sex:</label>
+    <select id="sex" onchange="fetchData()">
+        <option value="">All</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+    </select>
+
+    <label for="smoker">Smoker:</label>
+    <select id="smoker" onchange="fetchData()">
+        <option value="">All</option>
+        <option value="yes">Yes</option>
+        <option value="no">No</option>
+    </select>
+
+    <label for="region">Region:</label>
+<select id="region" onchange="fetchData()">
+    <option value="">All</option>
+    <option value="southwest">Southwest</option>
+    <option value="northwest">Northwest</option>
+</select>
+
+
+    <table id="data-table" border="1">
+        <tr>
+            <th>Age</th>
+            <th>Sex</th>
+            <th>BMI</th>
+            <th>Children</th>
+            <th>Smoker</th>
+            <th>Region</th>
+            <th>Charges</th>
+        </tr>
+    </table>
+
+    <script>
+        function fetchData() {
+            var sex = document.getElementById('sex').value;
+            var smoker = document.getElementById('smoker').value;
+            var region = document.getElementById('region').value;  // Include the region in the fetch call
+            var url = `/api/insurance/?sex=${sex}&smoker=${smoker}&region=${region}`;
+        
+            fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                const table = document.getElementById('data-table');
+                const rows = data.map(record =>
+                    `<tr>
+                        <td>${record.age}</td>
+                        <td>${record.sex}</td>
+                        <td>${record.bmi}</td>
+                        <td>${record.children}</td>
+                        <td>${record.smoker}</td>
+                        <td>${record.region}</td>
+                        <td>${record.charges}</td>
+                    </tr>`).join('');
+        
+                table.innerHTML = `<tr>
+                    <th>Age</th>
+                    <th>Sex</th>
+                    <th>BMI</th>
+                    <th>Children</th>
+                    <th>Smoker</th>
+                    <th>Region</th>
+                    <th>Charges</th>
+                </tr>` + rows;
+            })
+            .catch(error => console.error('Error loading the data:', error));
+        }
+        
+    </script>
+</body>
+</html>
