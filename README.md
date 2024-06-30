@@ -1,7 +1,8 @@
 # 1 # navigate to Django project directory (where manage.py is located).
 
+# 2 # pip install -r requirements.txt
 
-# 2 # run the script "load_data.py" to load CSV data into your Django database
+# 3 # run the script "load_data.py" to load CSV data into your Django database
 -Open your terminal  (where manage.py is located).
 
 -Enter the Django shell by running:
@@ -10,7 +11,7 @@ python manage.py shell
 from insurance_app.load_data import load_data
 load_data()
 
-# 3 # pip install -r requirements.txt
+
 
 # 4 # python manage.py makemigrations
 
