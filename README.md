@@ -1,6 +1,6 @@
 # 1 # navigate to Django project directory (where manage.py is located).
 
-- pip install requirements.txt
+- pip install -r requirements.txt
 
 
 # 2 # run the script "load_data.py" to load CSV data into your Django database
