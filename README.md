@@ -17,7 +17,7 @@ load_data()
 
 # 5 # python manage.py migrate
 
-# 6 # py manage.py createsuperuser 
+# 6 # python manage.py createsuperuser 
 
 # 7 #   python manage.py runserver
 
