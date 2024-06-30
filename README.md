@@ -1,4 +1,4 @@
-# 1 navigate to Django project directory (where manage.py is located).
+# 1 # navigate to Django project directory (where manage.py is located).
 
 - pip install requirements.txt
 
