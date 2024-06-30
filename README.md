@@ -1,4 +1,5 @@
-#1#navigate to Django project directory (where manage.py is located).
+#1# navigate to Django project directory (where manage.py is located).
+
 - pip install requirements.txt
 
 
@@ -12,9 +13,13 @@ from insurance_app.load_data import load_data
 load_data()
 
 #3# pip install -r requirements.txt
-#4#python manage.py makemigrations
+
+#4# python manage.py makemigrations
+
 #5#python manage.py migrate
+
 #6# py manage.py createsuperuser 
+
 #7#   python manage.py runserver
 
 
@@ -22,3 +27,4 @@ load_data()
 
 
 http://127.0.0.1:8000/api/insurance/?sex=male&smoker=no
+
